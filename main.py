@@ -3,6 +3,7 @@ import time
 import hashlib
 import threading
 from flask import Flask
+import os
 
 PUSHOVER_USER_KEY = "uuhb4p38no4o13os33uakfe5su3ed4"
 PUSHOVER_API_TOKEN = "a5u6n3uhp19izybbhkojqkbfh25ff5"
@@ -77,4 +78,5 @@ def status():
 
 if __name__ == "__main__":
     threading.Thread(target=monitor_loop, daemon=True).start()
-    app.run(host="0.0.0.0", port=10000)
+    send_notification("SkinBaron Monitor Started ✅", "Monitoring is now running!")
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))

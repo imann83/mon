@@ -1,19 +1,14 @@
 # SkinBaron Web Monitor (Pushover + Status Panel)
 
-Monitors the latest 10 items on SkinBaron every second and sends instant Pushover notifications.
+✅ مانیتور لحظه‌ای سایت SkinBaron با نوتیفیکیشن آنی به Pushover  
+🌐 دارای پنل وضعیت در /status  
+🚀 مناسب اجرا به عنوان Web Service رایگان در Render.com
 
-Also includes a web interface at `/status` to check activity and see if it's running.
+## نحوه استفاده:
 
-## Setup
-
-1. Upload files to GitHub
-2. Create a Web Service on [Render.com](https://render.com)
-3. Use the following run command:
-
-```
-python main.py
-```
-
-Service runs on port `10000` and exposes two endpoints:
-- `/` – basic check
-- `/status` – shows recent detected items
+1. آپلود در GitHub
+2. ساخت Web Service جدید در Render:
+   - Python 3
+   - Build Command: pip install -r requirements.txt
+   - Start Command: python main.py
+   - Port: 10000 یا خودکار از طریق متغیر PORT
