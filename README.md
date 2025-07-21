@@ -1,24 +1,19 @@
-# SkinBaron Monitor with Pushover
+# SkinBaron Web Monitor (Pushover + Status Panel)
 
-Monitors the last 10 items on SkinBaron and sends instant Pushover notifications when new items appear.
+Monitors the latest 10 items on SkinBaron every second and sends instant Pushover notifications.
+
+Also includes a web interface at `/status` to check activity and see if it's running.
 
 ## Setup
 
-1. Clone the repo
-2. Install dependencies:
-
-```
-pip install -r requirements.txt
-```
-
-3. Run the script:
+1. Upload files to GitHub
+2. Create a Web Service on [Render.com](https://render.com)
+3. Use the following run command:
 
 ```
 python main.py
 ```
 
-## Configuration
-
-Set your `PUSHOVER_USER_KEY` and `PUSHOVER_API_TOKEN` in `main.py`.
-
-You can deploy this on Render.com or Replit for 24/7 monitoring.
+Service runs on port `10000` and exposes two endpoints:
+- `/` – basic check
+- `/status` – shows recent detected items
